@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  vaultui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8004:8000"
+    networks:
+      - vaultui-networks
+    command: "./vaultui"
+
+networks:
+  vaultui-networks:
+    driver: bridge
