@@ -1,0 +1,7 @@
+*/.env
+.env
+*.env
+# Binaries for programs
+*.exe
+*.out
+*.bin
