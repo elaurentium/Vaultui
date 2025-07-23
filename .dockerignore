@@ -1,2 +1,3 @@
 .env
 config/redis.config
+sql/001_init.sql

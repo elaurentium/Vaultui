@@ -2,6 +2,7 @@
 .env
 *.env
 config/redis.config
+sql/001_init.sql
 # Binaries for programs
 *.exe
 *.out

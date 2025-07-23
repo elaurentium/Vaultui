@@ -16,5 +16,6 @@ RUN apk --no-cache add ca-certificates sqlite
 WORKDIR /app
 
 COPY --from=builder /app/vaultui .
+COPY --from=builder /app/sql /app/sql
 
 CMD ["./vaultui"]
