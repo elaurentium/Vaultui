@@ -1,0 +1,13 @@
+CREATE TABLE SYS_USR (
+    SYS_ID         INTEGER PRIMARY KEY AUTOINCREMENT,
+    SYS_NAME       TEXT NOT NULL,
+    SYS_EMAIL      TEXT NOT NULL UNIQUE,
+    SYS_HPASS      TEXT NOT NULL,              -- hash da senha
+    SYS_SALT       TEXT NOT NULL,              -- salt usado na hash
+    SYS_BDAY       DATE,                       -- data de nascimento
+    SYS_ROLE       TEXT,                       -- papel do usuário: ADMIN, USER, etc
+    SYS_ACTIVE     INTEGER DEFAULT 1,          -- 1 = ativo, 0 = inativo
+    SYS_VEMAIL     INTEGER DEFAULT 0,          -- 1 = e-mail verificado, 0 = não
+    SYS_CREATE_AT  DATETIME,
+    SYS_UPDATE_AT  DATETIME
+);

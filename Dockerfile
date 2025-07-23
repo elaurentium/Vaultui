@@ -1,4 +1,4 @@
-FROM golang:1.24.4-alpine AS builder
+FROM golang:1.23.2-alpine AS builder
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o vaultui internal/main.go
+RUN go build -o vaultui vault/main.go
 
 FROM alpine:latest
 

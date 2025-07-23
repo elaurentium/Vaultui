@@ -11,7 +11,6 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-
 type AuthService interface {
 	HashPassword(password string) (string, string, error)
 	VerifyPassword(password, hashedPassword, salt string) bool

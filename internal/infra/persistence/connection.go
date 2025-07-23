@@ -14,7 +14,7 @@ type SqliteConfig struct {
 
 func NewSqlite() (*sql.DB, error) {
 	config := &SqliteConfig {
-		Path: getDBPath(),
+		Path: os.Getenv("SQL_PATH"),
 	}
 
 	db, err := sql.Open("sqlite3", config.Path)
@@ -28,14 +28,4 @@ func NewSqlite() (*sql.DB, error) {
 	}
 
 	return db, nil
-}
-
-func getDBPath() string {
-	path := os.Getenv("SQL_PATH")
-
-	if path == " " {
-		return "sqlite not found"
-	}
-
-	return path
 }
