@@ -7,9 +7,11 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o vaultui vault/main.go
+RUN go build -o vaultui -trimpath -ldflags="-w -s" vault/main.go
 
 FROM alpine:latest
+
+RUN apk --no-cache add ca-certificates sqlite
 
 WORKDIR /app
 

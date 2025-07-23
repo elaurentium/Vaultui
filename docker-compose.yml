@@ -7,8 +7,8 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - ./redis.conf:/config/redis.conf
-    command: ["redis-server", "/config/redis.conf"]
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     networks:
       - vaultui-networks
   vaultui:
@@ -25,6 +25,8 @@ services:
       REDIS_ADDR: ${REDIS_ADDR}
       REDIS_PASS: ${REDIS_PASS}
       SQL_PATH: ${SQL_PATH}
+    volumes:
+      - ./sql/001_init.db:/app/sql/001_init.db
     networks:
       - vaultui-networks
     command: "./vaultui"

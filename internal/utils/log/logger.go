@@ -22,5 +22,5 @@ func (l *Logger) Info(format string, args ...any) {
 }
 
 func (l *Logger) Error(message string, args ...any) {
-	l.errorLogger.Println(message)
+	l.errorLogger.Printf(message, args...)
 }

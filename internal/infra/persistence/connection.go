@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	_ "github.com/mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 )
 
 type SqliteConfig struct {
@@ -17,7 +17,7 @@ func NewSqlite() (*sql.DB, error) {
 		Path: os.Getenv("SQL_PATH"),
 	}
 
-	db, err := sql.Open("sqlite3", config.Path)
+	db, err := sql.Open("sqlite", config.Path)
 	
 	if err != nil {
 		return nil, fmt.Errorf("failed to open sqlite database: %w", err)

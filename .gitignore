@@ -1,6 +1,7 @@
 */.env
 .env
 *.env
+config/redis.config
 # Binaries for programs
 *.exe
 *.out
